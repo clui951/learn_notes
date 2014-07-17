@@ -1,0 +1,3 @@
+~$ grep -n "string" file.txt
+        // search file.txt for instances of "string" and print it out with line 
+        // numbers (-n)

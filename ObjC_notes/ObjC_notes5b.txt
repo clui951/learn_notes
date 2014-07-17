@@ -1,0 +1,55 @@
+=== Make copy of object w/ same initializers ===
+
+
+--- Phone.h ---
+// add a new init that can take in a batteryLife
+
+@interface Phone : NSObject <NSCopying> {
+  NSNumber *_batteryLife;
+}
+
+@property NSString *phoneName;
+@property NSString *modelNumber;
+
+- (Phone *)initWithBatteryLife:(NSNumber *)batteryLife;
+@end
+
+
+
+
+--- Phone.m ---
+// implement new init so that it sets the new object's _batteryLife
+// change copyWithZone (which is auto called by [... copy]) so it calls our new
+//      init function
+
+import "Phone.h"
+
+@implementation Phone
+
+- (Phone *)init;
+{
+    _batteryLife = @100;
+    return [super init];
+}
+
+- (Phone *)initWithBatteryLife:(NSNumber *)batteryLife;
+{
+    _batteryLife = batteryLife;
+    return [super init];
+}
+
+- (Phone *) copyWithZone:(NSZone *)zone;
+{
+    Phone *copy = [[Phone allocWithZone:zone] 
+                        initWithBatteryLife:_batteryLife];
+    copy.phoneName = [NSString stringWithFormat:@"Copy of %@",self.phoneName];
+    return copy;
+}
+@end
+
+
+
+
+--- Execution File ---
+Phone *copy = [talkingiPhone copy];
+[copy reportBatteryLife];

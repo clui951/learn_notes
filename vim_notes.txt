@@ -1,0 +1,61 @@
+gg      Top of program
+GG      Bottom of program
+I       insert at beginning of line
+A       insert at end of line
+a       insert at end of cursor
+O       insert new line above
+o       insert new line below
+e       move to end of word
+ea      insert at end of word
+daw     delete selected word
+caw     delete selected word & enter insert mode
+/       search text
+n       next selection
+N       previous selection
+ddp     switch current line with next
+w       beginning of next word
+b       beginning of prev word
+zz      selected line to middle
+zt      selected line to top
+zb      selected line to bottom
+D       delete everything in line after cursor
+d0      delete everyhting in line before cursor
+VD      select line, then delete entire line
+>>      indent a line
+8>>     indent 8 lines
+
+
+<line-number>G      jump to specified line number
+
+:%s/foo/bar/gc      change each 'foo' to 'bar', but ask for confirmation first
+
+<number - enter>    
+    how many lines down to skip
+<number - direction/command>
+    repeat direction/command number times
+<shift - (>
+    jump to beginning/end of prev paragraph
+<shift - )>
+    jump to beginning/end of next paragraph 
+
+dd      cut entire line
+p       paste
+
+Copy paste (Detailed):
+    Position the cursor where you want to begin cutting.
+    Press v (or upper case V if you want to cut whole lines).
+    Move the cursor to the end of what you want to cut.
+    Press d to cut or y to copy.
+    Move to where you would like to paste.
+    Press P to paste before the cursor, or p to paste after.
+
+Paste from system clipboard without auto indentations
+    :set paste 
+    go to insert mode and command+v
+    :set nopaste
+
+
+------
+Vimrc:
+------
+<Ctrl-l>    redraws screen; clears highlighting from search

@@ -1,0 +1,52 @@
+=== Making a copy, but return type is not correct ===
+
+-- Will always return "Phone" type object
+// cannot send messages of subclass instance, only Phone instance messages
+
+[[Phone allocWithZone:zone] initWithBatteryLife:_batteryLife];
+
+
+
+-- if want to make copy of object that is subclass of Phone
+
+[[[existingObject class] alloc] init];
+
+
+
+-- copyWithZone should change too
+// use self so that itll always find the right class thats copying
+
+- (Phone *) copyWithZone:(NSZone *)zone;
+{
+    Phone *copy = [[[self class] allocWithZone:zone]
+                        initWithBatteryLife:_batteryLife];
+    copy.phoneName = [NSString stringWithFormat:@"Copy of %@",self.phoneName];
+    return copy;
+}
+
+
+=== id type ===
+
+• an object that belongs to a subclass can be specified as the type of a
+    superclass. Ex:
+
+Phone *talkingPhone = [[ChargablePhone alloc] init];
+
+
+• (NSObject *) is the most general type; use special type
+• "id"
+• if dont know type at compile time; compiler allow you to send any message
+• limitation: can't use dot notation; send messages only
+
+id person = [[Person alloc] init];
+[person setFirstName:@"Eric"];
+NSLog(@"%@", [person firstName]);
+
+
+- (id ) copyWithZone:(NSZone *)zone;
+{
+    id copy = [[[self class] allocWithZone:zone]
+    initWithBatteryLife:_batteryLife];
+    [copy setPhoneName:(@"Copy of %@", self.phoneName)];
+    return copy;
+}

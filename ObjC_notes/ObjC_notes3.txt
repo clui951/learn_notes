@@ -1,0 +1,104 @@
+
+==== PART 3 ====
+
+BOOL flag = YES;            // boolean: YES or NO
+if (flag) {
+    ...
+} else if (flag2) {
+    ...
+} else {
+    ...
+}
+
+----------
+
+[myString isEqualToString:otherString]      // check if myString is equal to
+                                            // otherString
+----------
+
+typedef NS_ENUM(NSInteger, DayOfWeek) {     // enum: define variable that can
+                                            // only be 1 of a limited set of
+                                            // values. Type of variable not
+                                            // changing, 
+                                            // DayOfWeek is alias for NSInteger
+    DOWMonday = 1,
+    DOWTuesday = 2,
+    DOWWednesday = 3,
+    DOWThursday = 4,
+    DOWFriday = 5,
+    DOWSaturday = 6,
+    DOWSunday = 7
+};
+
+DayOfWeek day = getDayOfWeek();         // using switch/case
+                                        // Obj-C makes sure all values of enum
+                                        // covered in switch
+switch (day) {
+    case DOWMonday:
+    case DOWTuesday:
+    case DOWWednesday: {
+        NSLog(@"You are top 3");
+        break;
+    }
+    case DOWThursday: 
+    case DOWFriday: {
+        NSLog(@"You aren't top 3");
+        break;
+    }
+    case DOWSaturday: 
+    case DOWSunday: {
+        NSLog(@"You're the weekend");
+    }
+}
+
+----------
+
+// Fast Enumeration: for loop
+NSDictionary *funWords = @{
+    @"one" : @"first", 
+    @"two":@"second",
+    @"three":@"third"
+};
+for (NSString *word in funWords) {
+    NSString *def = funWords[word];
+    NSLog(@"%@ is also known as %@", word, def);
+  }
+
+----------
+// Code Block
+
+/* NO ARGS */
+returnType (^blockName)(argumentType) = ^{ ... };       // general format
+
+void (^printName)(void) = ^{                    // example
+    NSLog(@"My name is Calvin");
+};
+
+printName();                                    // calls to the code block
+printName();
+
+/* 2 ARGS */
+void (^sumNum)(NSUInteger,NSUInteger) = ^(NSUInteger num1, NSUInteger num2){
+    NSLog(@"The sum is %lu", num1 + num2);
+};
+
+sumNum(23, 56);
+
+/* ARRAY ARG */
+void (^logCount)(NSArray *) = ^(NSArray *array){
+    NSLog(@"There are %lu objects in this array", [array count]);
+};
+
+logCount(@[@"Item1", @"Item2"]);
+
+----------
+// Enumeration with Code Block
+
+NSArray *names = @[@"calvin", @"kathy", @"bob"];
+
+void (^enumeratingBlock)(NSString *, NSUInteger, BOOL *) =
+    ^(NSString *name, NSUInteger index, BOOL *stop){
+        NSLog(@"%@ is here", name);
+    };
+
+[names enumerateObjectsUsingBlock:enumeratingBlock];

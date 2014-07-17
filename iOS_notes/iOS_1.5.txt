@@ -1,0 +1,29 @@
+#import "AppDelegate.h"
+
+@implementation AppDelegate
+- (BOOL)application:(UIApplication *)application
+  didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+  {
+    CGRect viewRect = [[UIScreen mainScreen] bounds];
+            // get the main screen and bounds of it; stores the width/height
+    self.window = [[UIWindow alloc] initWithFrame:viewRect];
+            // allocate memory for a UI window and init w/ main screen size
+    self.viewController = [[UIViewController alloc] init];
+    UIView *colorView = [[UIView alloc] initWithFrame:viewRect];
+            // create a view the size of the screen
+    colorView.backgroundColor = [UIColor lightGrayColor];
+            // set the background color of the view
+
+    self.viewController.view = colorView;
+
+    self.window.rootViewController = self.viewController;
+            // this ViewController takes control of window
+    [self.window makeKeyAndVisible];
+            // receive keyboard + all nontouch events
+
+    NSLog(@"Screen is %f tall and %f wide",
+                    viewRect.size.height,viewRect.size.width);
+
+    return YES;
+}
+@end

@@ -1,0 +1,42 @@
+
+-- Pt 2 --
+
+[objectName messageName];               // send a message to an object
+                                        // AKA calling a method
+
+NSLog(@"%@", [names description]);      // method call that returns a string
+                                        // with info about the object
+
+NSUInteger firstName_length = [firstName length]; 
+NSLog(@"%lu",firstName_length);
+
+NSNumber *numb = @6;
+NSUInteger numbInt = [numb unsignedIntegerValue];   // convert from NSNumber
+                                                    // to NSUInteger
+                                // can only do math operations on NSUInt
+
+ [firstName stringByAppendingString:lastName];
+                                        // Appending 2 strings together
+
+[firstName stringByReplacingOccurrencesOfString:@"a" withString:@"b"];
+                                    // replaces all instances of "a" in
+                                    // firstName with "b"
+
+NSString *emptyString = [NSString string];
+NSString *copy = [NSString stringWithString:prevString];
+                            // NSString commands to make an empty string
+                            // or make a copy of a previous string
+
+NSString *emptyString = [[NSString alloc] init];
+NSArray *emptyArray = [[NSArray alloc] init];
+NSDictionary *emptyDictionary = [[NSDictionary alloc] init];
+                            // alloc/init to create empty objects
+                            // allocate memory then initialize it
+
+NSString *copy = [[NSString alloc] initWithString:otherString];
+                            // alternative method to get copy of string
+
+NSString *fullname = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
+                            // simpler alternative to combine strings with
+                            // format
+

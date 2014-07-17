@@ -1,0 +1,19 @@
+================
+=== Pointers ===
+================
+
+// presence of asterisk * means "pointer to"
+// Ex. (NSString *) is a pointer to a NSString
+
+// Special Case: id
+// for id type, automatically a pointer, no need to use *
+
+// Basic C types: int, char, etc.
+// hold the values directly, dont need *
+
+
+// Log the adress that a variable is stored, instead of object the adress points
+//      to: %p
+// Ex.
+Person *person = [[Person alloc] init];
+NSLog(@"The person object is located at %p", person);

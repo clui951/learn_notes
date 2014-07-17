@@ -1,0 +1,60 @@
+To create C program:
+    :w "name".c
+
+To compile C:
+    gcc -o "new_name" "name".c
+
+To run C:
+    ./name
+
+
+
+item->value
+    acess value within a struct data type if item is
+     a pointer to a struct data object
+
+item.value
+    access value within a struct data type if item is
+    the struct data object itself
+
+
+
+--------
+Pointers
+--------
+*   refer to value that is stored in memory location pointer points at
+        "dereferencing"
+&   refers to adress in which a variable is stored
+
+<variable_type> *<name>;    //pointer declaration
+
+int *points_to_integer;     // example
+
+p = &x;                     // assigns the adress of x to p
+                            // p is now a pointer that points to x
+
+scanf( "%d", &x );          // Put a value in x, tell scanf the adress
+                            // in which to store the value (x's adress)
+
+printf( "%d\n", *p );       // Note the use of the * to get the value 
+
+
+Dynamic Memory Allocation
+-------------------------
+• initialize pointers with free memory
+• data strctures where exact amount of memory required unknown at compile time
+• get memory during programs execution
+
+int *ptr = malloc( sizeof(int) );   // "malloc" returns a pointer to adress
+                                    // with memory of a specified size
+                                    // "sizeof" keyword returns # bytes 
+                                    // required to store a certain variable
+
+int *ptr = malloc( sizeof(*ptr) );  // smart way to ensure enough memory
+
+free( ptr );                        // return memory to OS
+
+-- possible scenario --
+float *ptr; 
+/* hundreds of lines of code */
+ptr = malloc( sizeof(*ptr) ); 

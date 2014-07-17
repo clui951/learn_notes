@@ -1,0 +1,105 @@
+-- PT 4 --
+
+/* Define A New Class and Inherit From Object Class */
+
+
+
+== Phone.h ==
+/* header file convention ;  <ClassName>.h */
+
+@interface Phone : NSObject     // new Phone class inheriting Object class
+
+@property NSString *phoneName;  // new name property
+
+@property (readonly) NSString *birthName;   // read only property
+
+- (NSString *)getName;
+- (void) speak;
+- (NSArray *)names;
+- (NSString *)echo:(NSString *)greeting;
+- (void) changeLastName:(NSString *)newLastName;
+
+@end
+
+
+
+== Phone.m ==
+/* implementation file convention ;  <ClassName>.m */
+
+#import "Phone.h"               // import "<ClassName>"
+
+@implementation Phone           // new implementation of Phone
+
+- (void) changeLastName:(NSString *)newLastName;
+{
+    _lastName = newLastName;        // change (readonly) property in function
+}
+
+
+-(NSString *)getName;
+{
+    return [NSString stringWithFormat:@"%@",self.phoneName];
+}
+- (void) speak;
+{
+    NSLog(@"%@: I'm %@", self, self.phoneName);  // self returns 
+                                            //<"description": memory adress>
+}
+- (NSArray *)names;
+{
+    return @[self.phoneName, self.phoneName];
+}
+- (NSString *)speak:(NSString *)greeting;
+{
+    NSString *message = [NSString stringWithFormat:@"%@",greeting];
+    return message;
+}
+
+@end
+
+
+
+== Execution File ==
+
+#import "Phone.h"
+Phone *talkingPhone = [[Phone alloc] init];
+talkingPhone.phoneName = @"personal iPhone";    // set property, no need for
+                                                // NSString declaratoin again
+[talkingPhone speak];                       // method call to speak
+NSString *talkingPhone_name = [talkingPhone getName]; // store return value
+NSString *echoed = [talkingPhone speak:@"Hello There!"]
+                                            // accepts/returns one arg
+                                                       
+
+
+
+
+
+=== Example Code ===
+
+-(void) decreaseBatteryLife;
+{
+    self.batteryLife = @([self.batteryLife intValue] - 1);
+}
+
+===================
+/* set read-only variables during init */
+/* Person.m */
+
+@implementation Person
+- (Person *)init;
+{
+    _age = @0;
+    return [super init];    // calls super class init function
+}
+@end
+
+==================
+/* variable only available to methods, internal */
+/* make it an instance varialble */
+/* Coffee.h */
+@interface Coffee : NSObject {
+    NSNumber *_temperature;     // instance variables go in curly brace block
+}
+@end
+

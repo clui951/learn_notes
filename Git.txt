@@ -1,0 +1,127 @@
+====
+GIT
+====
+
+--- Create a New Repository on the Command Line ---
+touch README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/clui951/Test.git
+git push -u origin master
+
+--- Push an Existing Repository on the Command Line ---
+git remote add origin https://github.com/clui951/Test.git
+git push -u origin master
+
+
+
+
+
+
+Version Control:
+    takes snapshots of file everytime you commit
+    stored as a linked list to older versions
+    to move to older versions, move head to appropriate file
+
+Branching:
+    split off and try different paths through commits
+    keep track of multiple different versions of code, and easily switch between versions
+    can put branches back together by merging
+
+Merge Conflicts:
+    when git's auto merge fails, need to manually open files and merge
+    files with conflicts contains segments with both code with branch_name headers
+    manually select which version to keep
+
+File Status Lifecycle:
+    Untracked -> Unmodified -> Modified -> Staged
+    • when file is commited, moves from staged to unmodified
+
+Commit
+    specify when we'd like a repo to be saved
+    like having Git take a snapshot of working directory; snapshot contains user specified files
+
+
+git init                    turns directory into local repository
+
+ls -la                      list all directories including .git
+
+git status                  status of each file
+
+git add [file]              add untracked file to repo and stage it
+
+git add .                   add/stage all files in directory
+
+git commit -m [message]     commit staged files, with description of changes
+                                bug fixes, implemented classes,etc.
+
+git commit                  commit and open up text editor to type long messages
+
+git log                     see previous commits
+
+git log --graph             show previous commits with branching; shows history from current branch and up
+                            shows nothing after current position
+
+gitk                        git GUI
+
+git reset HEAD [file]       unstage a file; remove file from staging area so won't be included in next commit
+                                modifications kept
+
+git checkout -- [file]      revert file to state of most recent commit; cannot be undone
+
+git branch [new_branch_name]
+                            create a new branch; use descriptive nameto remember what commits it contains
+
+git checkout [destination_branch]
+                            switch to a branch; initial branch is called master
+
+git checkout master
+git merge [other_branch]
+                            switch to master and merge other_branch with master
+                            git merge will merge from specified branch to branch you're on
+
+git branch -d [branch_name]
+                            delete a branch
+
+-------
+Remotes
+-------
+tell git where repo is located
+
+git remote add [short_name] [url]
+                            primary centralized repository name "origin" by convention
+
+git remote rename [old_name] [new_name]
+                            rename old remote to new
+
+git remote rm [remote_name]
+                            remove a remote you are no longer using
+
+git remote -v               
+                            view remotes you already have
+
+git clone [remote_url]
+                           make a copy of remote repo to local computer so that you can work on code
+
+
+-------------------
+Pushing and Pulling
+-------------------
+update contents of a remote repository by adding commits made locally
+or update local repo with commits on the remote
+
+git push [remote_name] [local_branch]:[remote_branch]
+                            push commits from local repository to a remote
+                            ex: git push origin awesome:awesome
+                                    pushing commits from my awesome branch to origin remote
+                                git push origin master
+                                    push master branch to origin remote
+
+git fetch [remote_name]
+                            fetch changes to view them, but wont merge remote with your local
+
+git pull [remote_name] [remot_branch_name]
+                            fetch changes AND merge changes into HEAD branch (branch you are on locally)
+
+

@@ -1,0 +1,37 @@
+=================
+Objective C Notes
+=================
+
+Note: 
+A good rule of thumb for how to tell if an object is an Objective-C object or a
+C one: Objective-C objects are defined with the * in front of variable names,
+like this: NSString *name
+
+-- Pt 1 --
+
+NSLog(@"Calvin");                       // print out "Calvin" to output
+
+NSString *firstName = @"Calvin";        // store "Calvin" to firstName variable
+
+NSLog(firstName);                       // print out string stored in firstName
+
+NSLog(@"Hi there, %@",firstName);       // NSLog() placeholder,formatted string 
+
+NSNumber *age = @18;                    // store number 18 into age variable
+
+NSLog(@"%@ is %@ years old",firstName,age);     // placeholder same for both
+
+NSArray *names = @[@"Calvin", @"Kathy", @"Bob"];
+                                        // create array with 3 strings
+
+NSLog(@"%@", names[1]);                 // output 2nd item in names array
+
+names = @[@"Calvin", @"Kathy", @"Bob", @"Joe"]; 
+                                        // change names to hold 4 strings
+
+NSDictionary *ages = @{@"Calvin":@18, @"Kathy":@18, @"Grandpa":@75};
+                                        // dictionary that associates names
+                                        // with age
+
+NSLog(@"%@", ages[@"Calvin"]);          // print out calvin's age
+

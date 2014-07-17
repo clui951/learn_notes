@@ -1,0 +1,46 @@
+=== Check if object can respond to message before sending it ===
+if ([talkingiPhone respondsToSelector:@selector(decreaseBatteryLife:)]) { ... }
+
+
+=== Enforces class adopts a specific protocol ===
+/* protocol declares set of messages an object can respond to */
+/* if class does not adopt the pecified protocol, compiler will error */
+
+Person <NSCopying> *person = [[Person alloc] init];
+Person *copy = [person copy];
+
+// Person class must adopt NSCopying protocol to comiple
+
+
+
+=== Class adapt a protocol ===
+/* in the Person.h, header file */
+
+@interface Person : NSObject <NSCopying>
+@end
+
+// Person class extends NSObject and adopts NSCopying protocol
+
+
+
+=== Make copy of an object in specific location in memory ===
+/* in the Person.m, implementation file */
+
+@implementation Person
+- (Person *) copyWithZone:(NSZone *)zone;
+{
+    Person *personCopy = [[Person allocWithZone:zone] init];
+    return personCopy;
+}
+@end
+
+== function call
+
+[newPerson copy];       // copy automatically calls copyWithZone
+
+
+
+=== nil; empty property ===
+// if a property/variable hasnt been set to anything, value of nil
+// can send messages, but will always return nil
+
