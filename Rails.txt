@@ -1,0 +1,10 @@
+=============
+Ruby on Rails
+=============
+
+--- Beginning project ---
+mkdir rails_projects
+cd rails_projects
+rails new first_app
+
+
