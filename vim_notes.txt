@@ -25,6 +25,12 @@ VD      select line, then delete entire line
 8>>     indent 8 lines
 
 
+ctrl + e    scroll down one line
+ctrl + y    scroll up one line
+ctrl + d    scroll down half page
+ctrl + u    scroll up half page
+
+
 <line-number>G      jump to specified line number
 
 :%s/foo/bar/gc      change each 'foo' to 'bar', but ask for confirmation first
