@@ -20,8 +20,15 @@ git add *       add all files previously added and non hidden
 
 
 ==== branch, edit, commit, merge workflow ====
+create branch from master with name modify-README
+    view branches
+$ git checkout -b modify-README
+$ git branch
 
-
+After commit, ready to merge
+    switch to master branch and merge with specified
+$ git checkout master
+$ git merge modify-README
 
 
 
