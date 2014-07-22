@@ -27,8 +27,13 @@ $ git branch
 
 After commit, ready to merge
     switch to master branch and merge with specified
+    delete branch if no longer needed
 $ git checkout master
 $ git merge modify-README
+$ git branch -d modify-README
+
+If major messups occur and want to discard of branch without merge
+$ git branch -D modify-README
 
 
 
