@@ -71,6 +71,9 @@ git reset HEAD [file]       unstage a file; remove file from staging area so won
 
 git checkout -- [file]      revert file to state of most recent commit; cannot be undone
 
+git checkout -f
+                            revert current state to most recent commit
+
 git branch [new_branch_name]
                             create a new branch; use descriptive nameto remember what commits it contains
 
