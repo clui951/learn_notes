@@ -19,6 +19,12 @@ git add .       add ALL files (including hidden)
 git add *       add all files previously added and non hidden
 
 
+==== branch, edit, commit, merge workflow ====
+
+
+
+
+
 
 Version Control:
     takes snapshots of file everytime you commit
