@@ -30,6 +30,7 @@ ctrl + y    scroll up one line
 ctrl + d    scroll down half page
 ctrl + u    scroll up half page
 
+:set syntax=___     set syntax highlighting to a specific language (python, ruby, html, etc)
 
 <line-number>G      jump to specified line number
 

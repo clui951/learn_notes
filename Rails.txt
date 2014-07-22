@@ -9,6 +9,8 @@ rails new first_app
 
 --- Use Bundler to install gems needed ---
 Bundler is run automatically by rails command 
-you can make changes to the default application gems and run bundler agian
+you can make changes to the default application gems and run bundler again
+    bundle update
+    bundle install
 
 
