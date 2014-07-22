@@ -1,6 +1,8 @@
 =============
 Ruby on Rails
 =============
+* reference Git.txt and Heroku.txt
+
 
 --- Beginning project ---
 $ mkdir rails_projects
@@ -18,4 +20,11 @@ $ rails server
    identify port number (3000) and access in browser
    http://localhost:3000
 
+--- Setup Git and Heroku ---
+$ git init
+$ heroku create
 
+--- Deploy to Heroku ---
+use git to push to heroku and to open
+$ git push heroku master
+$ heroku open

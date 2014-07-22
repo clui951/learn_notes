@@ -1,3 +1,14 @@
 =======
 Heroku
 =======
+
+$ heroku login
+
+create place on heroku servers for sample app to live
+$ heroku create
+
+push to heroku with git
+$ git push heroku master
+
+open browser to deployed application
+$ heroku open
