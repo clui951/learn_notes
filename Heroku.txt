@@ -12,3 +12,8 @@ $ git push heroku master
 
 open browser to deployed application
 $ heroku open
+
+rename app (must be unique)
+    app will be located at ____.herokuapp.com
+$ heroku rename ____
+
