@@ -15,7 +15,8 @@ git remote add origin https://github.com/clui951/Test.git
 git push -u origin master
 
 
-
+git add .       add ALL files (including hidden)
+git add *       add all files previously added and non hidden
 
 
 

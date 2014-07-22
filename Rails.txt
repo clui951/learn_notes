@@ -3,14 +3,19 @@ Ruby on Rails
 =============
 
 --- Beginning project ---
-mkdir rails_projects
-cd rails_projects
-rails new first_app
+$ mkdir rails_projects
+$ cd rails_projects
+$ rails new first_app
 
 --- Use Bundler to install gems needed ---
 Bundler is run automatically by rails command 
 you can make changes to the default application gems and run bundler again
-    bundle update
-    bundle install
+    $ bundle update
+    $ bundle install
+
+--- Local Web Server ---
+$ rails server
+   identify port number (3000) and access in browser
+   http://localhost:3000
 
 
