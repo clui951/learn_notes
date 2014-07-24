@@ -9,22 +9,44 @@ $ mkdir rails_projects
 $ cd rails_projects
 $ rails new first_app
 
+
 --- Use Bundler to install gems needed ---
 Bundler is run automatically by rails command 
 you can make changes to the default application gems and run bundler again
     $ bundle update
     $ bundle install
 
+
 --- Local Web Server ---
 $ rails server
    identify port number (3000) and access in browser
    http://localhost:3000
 
+
 --- Setup Git and Heroku ---
 $ git init
 $ heroku create
+
 
 --- Deploy to Heroku ---
 use git to push to heroku and to open
 $ git push heroku master
 $ heroku open
+
+
+--- Create interface to users model ---
+use rails built in generate scaffold command
+    create Users resource with name and email strings
+$ rails generate scaffold User name:string email:string
+
+users           index of all users
+users/1         show user with id 1
+users/new       page to make new user
+users/1/edit    page to edit user with id 1
+
+
+--- Update (migrate) database with users model data ---
+use 'rake' command
+ensure version of rake as specified in Gemfile with 'bundle exec'
+$ bundle exec rake db:migrate
+
