@@ -37,16 +37,23 @@ $ heroku open
 --- Create interface to users model ---
 use rails built in generate scaffold command
     create Users resource with name and email strings
+    look up resource online to see URLs and routes
 $ rails generate scaffold User name:string email:string
 
-users           index of all users
-users/1         show user with id 1
-users/new       page to make new user
-users/1/edit    page to edit user with id 1
+
+--- Create interface to micropost model ---
+use rails built in command to creat scaffold code
+    create micropost resource with content and user_id
+    look up resource online to see URLs and routes
+$ rails generate scaffold Micropost content:string user_id:integer
 
 
---- Update (migrate) database with users model data ---
+--- Update (migrate) database with users/micropost model data ---
 use 'rake' command
 ensure version of rake as specified in Gemfile with 'bundle exec'
 $ bundle exec rake db:migrate
+
+
+--- edit models characteristics ---
+app/models/[MODEL_NAME].rb
 
