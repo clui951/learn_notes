@@ -4,16 +4,20 @@ Heroku
 
 $ heroku login
 
-create place on heroku servers for sample app to live
+--- create place on heroku servers for sample app to live ---
 $ heroku create
 
-push to heroku with git
+--- push to heroku with git ---
 $ git push heroku master
 
-open browser to deployed application
+--- get application's database to work, migrate the production database ---
+    updates the database at Heroku w/ necessary data models changed (user/micropost)
+$ heroku run rake db:migrate
+
+--- open browser to deployed application ---
 $ heroku open
 
-rename app (must be unique)
+--- rename app (must be unique) ---
     app will be located at ____.herokuapp.com
 $ heroku rename ____
 
