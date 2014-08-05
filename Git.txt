@@ -98,6 +98,8 @@ git branch [new_branch_name]
 git checkout [destination_branch]
                             switch to a branch; initial branch is called master
 
+git show-branch             shows commit ancestry graph; branches and their commits
+
 git checkout master
 git merge [other_branch]
                             switch to master and merge other_branch with master

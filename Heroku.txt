@@ -21,6 +21,9 @@ $ heroku open
     app will be located at ____.herokuapp.com
 $ heroku rename ____
 
+--- check production logs ---
+$ heroku logs
+
 
 --- REGULAR DEPLOYMENT ---
 $ git push heroku

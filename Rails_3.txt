@@ -5,3 +5,14 @@ SAMPLE APP
 $ git push
 $ git push heroku
 $ heroku run rake db:migrate
+
+--- Undoing accidental Rails Commands ---
+$ rails generate controller FooBars baz quux
+$ rails destroy controller FooBars baz quux
+        2nd line undoes 1st
+
+$ rake db:migrate
+$ rake db:rollback
+OR
+$ rake db:migrate VERSION=0
+        undo migrations of database; have the option of specifying version
