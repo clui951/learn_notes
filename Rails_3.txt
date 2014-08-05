@@ -1,0 +1,7 @@
+SAMPLE APP
+
+
+--- Regular Push and Deployment ---
+$ git push
+$ git push heroku
+$ heroku run rake db:migrate

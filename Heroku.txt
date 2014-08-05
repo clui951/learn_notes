@@ -21,3 +21,7 @@ $ heroku open
     app will be located at ____.herokuapp.com
 $ heroku rename ____
 
+
+--- REGULAR DEPLOYMENT ---
+$ git push heroku
+$ heroku run rake db:migrate
